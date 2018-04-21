@@ -1,2 +1,4 @@
 # mobile-app-hackathon2018
-develop mobile application for hackathon 2018
+
+ハッカソン用にリポジトリを作りました。
+まずは設計書を入れておきます。
