@@ -1,0 +1,40 @@
+* {
+    font-family: "Hannari";
+}
+
+.header {
+    text-align: center;
+    height: 10%;
+    background-color: #373737;
+    color: #ffffff;
+    vertical-align: middle;
+}
+
+.content {
+    height: 80%;
+    text-align: center;
+    background-color: #89DCD2;
+}
+
+.footer {
+    text-align: center;
+    height: 10%;
+    background-color: #373737;
+    color: #ffffff;
+}
+
+.login {
+    text-align: center;
+    width: 50%;
+    margin: 20px auto;
+}
+
+.button {
+    width: 30%;
+    margin: 20px auto;
+    background-color: #EAAE41;
+}
+
+.table th {
+    background-color: #EAAE41;   
+}
