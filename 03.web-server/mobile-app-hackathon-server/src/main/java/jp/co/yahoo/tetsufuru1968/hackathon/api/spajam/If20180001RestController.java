@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import jp.co.yahoo.tetsufuru1968.hackathon.domain.WorkItem;
+import jp.co.yahoo.tetsufuru1968.hackathon.dto.WorkItemListDto;
 import jp.co.yahoo.tetsufuru1968.hackathon.service.WorkItemService;
 import lombok.NoArgsConstructor;
 
@@ -20,10 +21,13 @@ public class If20180001RestController {
 	WorkItemService workItemService;
 
 	@GetMapping
-	public List<WorkItem> getWorkItems() {
+	public WorkItemListDto getWorkItems() {
 		List<WorkItem> workItems = workItemService.getWorkItems();
 
-		return workItems;
+		// 労働アイテムを取得し返却する。
+		WorkItemListDto workItemListDto = new WorkItemListDto(workItems);
+
+		return workItemListDto;
 	}
 
 }
