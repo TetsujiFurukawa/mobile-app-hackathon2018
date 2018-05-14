@@ -59,7 +59,7 @@ CREATE TABLE spajam.t_wallet
 	user_id int NOT NULL,
 	currency_id varchar(10) NOT NULL,
 	number decimal(9) NOT NULL,
-	PRIMARY KEY (user_id)
+	PRIMARY KEY (user_id, currency_id)
 ) ENGINE = InnoDB DEFAULT CHARACTER SET utf8;
 
 

@@ -138,7 +138,7 @@
 			</connections>
 			<display>false</display>
 			<creation_date>2018-05-05 18:57:29</creation_date>
-			<updated_date>2018-05-06 02:19:22</updated_date>
+			<updated_date>2018-05-14 22:44:51</updated_date>
 			<model_property>
 				<name>プロジェクト名</name>
 				<value></value>
@@ -555,7 +555,7 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>8</word_id>
+					<word_id>9</word_id>
 					<id>1</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -722,7 +722,7 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>9</word_id>
+					<word_id>8</word_id>
 					<id>4</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -1145,7 +1145,7 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>13</word_id>
+					<word_id>12</word_id>
 					<id>14</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -1659,7 +1659,7 @@
 					<auto_increment>false</auto_increment>
 					<foreign_key>true</foreign_key>
 					<not_null>true</not_null>
-					<primary_key>false</primary_key>
+					<primary_key>true</primary_key>
 					<unique_key>false</unique_key>
 					<character_set></character_set>
 					<collation></collation>
@@ -1680,7 +1680,7 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>12</word_id>
+					<word_id>13</word_id>
 					<id>25</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
