@@ -3,13 +3,14 @@ package jp.co.yahoo.tetsufuru1968.hackathon.dto;
 import javax.persistence.Entity;
 
 import jp.co.yahoo.tetsufuru1968.hackathon.domain.Work;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
 @Data
+@AllArgsConstructor
 @NoArgsConstructor
-//@EqualsAndHashCode(callSuper = true)
 public class WorkDto extends Work {
 
 	// 労働アイテム名称

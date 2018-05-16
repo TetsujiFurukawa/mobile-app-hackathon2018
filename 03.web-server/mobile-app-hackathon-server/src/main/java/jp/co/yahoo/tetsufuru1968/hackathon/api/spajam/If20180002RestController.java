@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import jp.co.yahoo.tetsufuru1968.hackathon.dto.WorkDto;
 import jp.co.yahoo.tetsufuru1968.hackathon.dto.WorkListDto;
 import jp.co.yahoo.tetsufuru1968.hackathon.dto.WorkListSearchConditionDto;
-import jp.co.yahoo.tetsufuru1968.hackathon.service.WorkService;
+import jp.co.yahoo.tetsufuru1968.hackathon.service.If2018002Service;
 import lombok.NoArgsConstructor;
 
 @RestController
@@ -20,11 +20,11 @@ import lombok.NoArgsConstructor;
 public class If20180002RestController {
 
 	@Autowired
-	WorkService workService;
+	If2018002Service if2018002Service;
 
 	@PostMapping
 	public WorkListDto getWorks(@RequestBody WorkListSearchConditionDto searchCondition) {
-		List<WorkDto> works = workService.getWorks(searchCondition.getUser_id());
+		List<WorkDto> works = if2018002Service.getWorks(searchCondition.getUser_id());
 
 		// 労働を取得し返却する。
 		WorkListDto workListDto = new WorkListDto(works);
