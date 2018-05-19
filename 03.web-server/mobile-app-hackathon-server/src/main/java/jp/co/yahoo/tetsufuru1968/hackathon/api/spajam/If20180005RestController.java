@@ -7,21 +7,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import jp.co.yahoo.tetsufuru1968.hackathon.domain.Work;
-import jp.co.yahoo.tetsufuru1968.hackathon.service.If2018003Service;
+import jp.co.yahoo.tetsufuru1968.hackathon.service.WorkService;
 import lombok.NoArgsConstructor;
 
 @RestController
-@RequestMapping("api/spajam/if20180003")
+@RequestMapping("api/spajam/if20180005")
 @NoArgsConstructor
-public class If20180003RestController {
+public class If20180005RestController {
 
 	@Autowired
-	If2018003Service if2018003Service;
+	WorkService workService;
 
 	@PostMapping
-	public Work registerWork(@RequestBody Work work) {
-		// 新規登録もしくは更新する
-		return if2018003Service.registerWork(work);
+	public Work createWork(@RequestBody Work work) {
+		if (work.getWork_id() == null) {
+			return workService.create(work);
+		} else {
+			return workService.update(work);
+		}
 
 	}
 
