@@ -26,7 +26,7 @@ public class Wallet implements Serializable {
 
 	// 通貨ID
 	@Id
-	private Integer currency_id;
+	private String currency_id;
 
 	// 数量
 	private Integer number;
@@ -39,7 +39,7 @@ public class Wallet implements Serializable {
 
 		// 通貨ID
 		@Id
-		private Integer currency_id;
+		private String currency_id;
 
 	}
 }

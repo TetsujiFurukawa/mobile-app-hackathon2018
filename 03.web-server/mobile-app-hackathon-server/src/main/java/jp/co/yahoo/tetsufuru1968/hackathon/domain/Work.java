@@ -1,10 +1,11 @@
 package jp.co.yahoo.tetsufuru1968.hackathon.domain;
 
-import java.sql.Date;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -21,7 +22,7 @@ public class Work {
 
 	// 労働実績ID
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer work_id;
 
 	//日付
@@ -41,11 +42,15 @@ public class Work {
 	private String child_comment;
 
 	// 添付画像
-	private Byte[] attached_image;
+	@Column(nullable = true)
+	private byte[] attached_image;
 
 	// 親コメントID
+	@Column(nullable = true)
 	private Integer parent_comment_id;
 
 	// 承認フラグ
+	@Column(nullable = true)
 	private Integer approval;
+
 }
