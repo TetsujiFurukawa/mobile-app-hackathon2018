@@ -20,7 +20,7 @@ public class If20180004RestController {
 
 	@PostMapping
 	public void CurrencyExchange(@RequestBody CurrencyExchangeDto currencyExchangeDto) {
-		walletService.CurrencyExchange(currencyExchangeDto);
+		walletService.currencyExchange(currencyExchangeDto);
 	}
 
 }

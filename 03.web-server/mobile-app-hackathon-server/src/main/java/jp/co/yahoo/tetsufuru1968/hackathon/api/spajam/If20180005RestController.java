@@ -6,8 +6,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import jp.co.yahoo.tetsufuru1968.hackathon.domain.Work;
-import jp.co.yahoo.tetsufuru1968.hackathon.service.WorkService;
+import jp.co.yahoo.tetsufuru1968.hackathon.dto.UserListDto;
+import jp.co.yahoo.tetsufuru1968.hackathon.dto.UserSearchConditionDto;
+import jp.co.yahoo.tetsufuru1968.hackathon.service.If2018005Service;
 import lombok.NoArgsConstructor;
 
 @RestController
@@ -16,15 +17,11 @@ import lombok.NoArgsConstructor;
 public class If20180005RestController {
 
 	@Autowired
-	WorkService workService;
+	If2018005Service if2018005ervice;
 
 	@PostMapping
-	public Work createWork(@RequestBody Work work) {
-		if (work.getWork_id() == null) {
-			return workService.create(work);
-		} else {
-			return workService.update(work);
-		}
+	public UserListDto getExchangetargetUser(@RequestBody UserSearchConditionDto userSearchConditionDto) {
+		return if2018005ervice.getExchangetargetUser(userSearchConditionDto);
 
 	}
 
