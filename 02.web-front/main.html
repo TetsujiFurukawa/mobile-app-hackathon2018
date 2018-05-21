@@ -21,13 +21,13 @@
     </div>
 
     <div class="content">
-        <button class="button">きょうなにした</button>
-        <button class="button">　おねだり　</button>
-        <button class="button">　けんさく　</button>
+        <button class="button" id="todayWork">きょうなにした</button>
+        <button class="button" id="scrounge" onClick="scrounge()">　おねだり　</button>
+        <button class="button" id="exchange">　こうかん　</button>
 
-        <p id="achievementStatus">よみこみちゅう</p>
+        <p id="status">よみこみちゅう</p>
 
-        <table class="table" id="achivementList">
+        <table class="table" id="workList">
             <thead>
                 <tr>
                     <th>ひにち</th>
