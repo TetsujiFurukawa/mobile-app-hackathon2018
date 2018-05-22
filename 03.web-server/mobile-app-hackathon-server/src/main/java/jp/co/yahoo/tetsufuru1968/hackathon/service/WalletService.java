@@ -9,6 +9,7 @@ import jp.co.yahoo.tetsufuru1968.hackathon.dto.CurrencyDto;
 import jp.co.yahoo.tetsufuru1968.hackathon.dto.CurrencyExchangeDto;
 import jp.co.yahoo.tetsufuru1968.hackathon.dto.CurrencyListDto;
 import jp.co.yahoo.tetsufuru1968.hackathon.dto.UserDto;
+import jp.co.yahoo.tetsufuru1968.hackathon.repository.CurrencyDtoRepository;
 import jp.co.yahoo.tetsufuru1968.hackathon.repository.WalletRepository;
 import lombok.AllArgsConstructor;
 
@@ -17,6 +18,7 @@ import lombok.AllArgsConstructor;
 public class WalletService {
 
 	WalletRepository walletRepository;
+	CurrencyDtoRepository currencyDtoRepository;
 
 	// お小遣いの交換
 	public void currencyExchange(CurrencyExchangeDto currencyExchangeDto) {
@@ -45,10 +47,10 @@ public class WalletService {
 	// 所持金取得
 	public CurrencyListDto getCurrencyList(UserDto userDto) {
 		Integer userId = userDto.getUser_id();
-		List<CurrencyDto> CurrencyList = walletRepository.findByUserId(userId);
+		List<CurrencyDto> CurrencyList = currencyDtoRepository.findByUserId(userId);
 
 		CurrencyListDto currencyListDto = new CurrencyListDto();
-		currencyListDto.setCurrencyList(CurrencyList);
+		//		currencyListDto.setCurrencyList(CurrencyList);
 
 		return currencyListDto;
 

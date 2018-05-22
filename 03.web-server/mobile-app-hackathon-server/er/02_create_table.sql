@@ -3,6 +3,7 @@ SET SESSION FOREIGN_KEY_CHECKS=0;
 /* Drop Tables */
 
 DROP TABLE IF EXISTS spajam.t_wallet;
+DROP TABLE IF EXISTS spajam.t_wish;
 DROP TABLE IF EXISTS spajam.t_work;
 DROP TABLE IF EXISTS spajam.m_user;
 DROP TABLE IF EXISTS spajam.m_family;
@@ -60,6 +61,18 @@ CREATE TABLE spajam.t_wallet
 	currency_id varchar(10) NOT NULL,
 	number decimal(9) NOT NULL,
 	PRIMARY KEY (user_id, currency_id)
+) ENGINE = InnoDB DEFAULT CHARACTER SET utf8;
+
+
+CREATE TABLE spajam.t_wish
+(
+	wish_id int NOT NULL AUTO_INCREMENT,
+	user_id int NOT NULL,
+	name varchar(50) NOT NULL,
+	currency_id varchar(10) NOT NULL,
+	number decimal(9) NOT NULL,
+	buyFlg tinyint NOT NULL,
+	PRIMARY KEY (wish_id)
 ) ENGINE = InnoDB DEFAULT CHARACTER SET utf8;
 
 

@@ -19,4 +19,11 @@ public class WorkListDto implements Serializable {
 
 	// 労働一覧リスト
 	List<WorkDto> workList;
+
+	// 通貨リスト
+	List<CurrencyDto> currencyList;
+
+	public String status;
+
+	public Boolean isParent;
 }
