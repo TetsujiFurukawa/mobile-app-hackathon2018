@@ -3,6 +3,7 @@ package jp.co.yahoo.tetsufuru1968.hackathon.service;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import jp.co.yahoo.tetsufuru1968.hackathon.domain.Wallet;
 import jp.co.yahoo.tetsufuru1968.hackathon.dto.CurrencyDto;
@@ -15,6 +16,7 @@ import lombok.AllArgsConstructor;
 
 @Service
 @AllArgsConstructor
+@Transactional
 public class WalletService {
 
 	WalletRepository walletRepository;
@@ -32,7 +34,10 @@ public class WalletService {
 
 		// 送信先に通貨を追加する
 		List<Wallet> targetWallet = walletRepository.findByCurrency(trgetUserId, currencyId);
-		Wallet wallet = new Wallet(trgetUserId, currencyId, number);
+		Wallet wallet = new Wallet();
+		wallet.setUser_id(trgetUserId);
+		wallet.setCurrency_id(currencyId);
+		wallet.setNumber(number);
 		if (targetWallet != null && targetWallet.size() == 0) {
 			// レコードが存在しなかった場合は新規登録する
 			walletRepository.save(wallet);
@@ -50,7 +55,7 @@ public class WalletService {
 		List<CurrencyDto> CurrencyList = currencyDtoRepository.findByUserId(userId);
 
 		CurrencyListDto currencyListDto = new CurrencyListDto();
-		//		currencyListDto.setCurrencyList(CurrencyList);
+		currencyListDto.setCurrencyList(CurrencyList);
 
 		return currencyListDto;
 

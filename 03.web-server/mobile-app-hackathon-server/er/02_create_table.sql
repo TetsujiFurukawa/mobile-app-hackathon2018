@@ -9,6 +9,7 @@ DROP TABLE IF EXISTS spajam.m_user;
 DROP TABLE IF EXISTS spajam.m_family;
 DROP TABLE IF EXISTS spajam.m_work_item;
 DROP TABLE IF EXISTS spajam.m_virtual_currency;
+DROP TABLE IF EXISTS spajam.t_geometry;
 
 
 
@@ -55,12 +56,23 @@ CREATE TABLE spajam.m_work_item
 ) ENGINE = InnoDB DEFAULT CHARACTER SET utf8;
 
 
+CREATE TABLE spajam.t_geometry
+(
+	geometory_id int NOT NULL AUTO_INCREMENT,
+	user_id int NOT NULL,
+	search_datetime datetime NOT NULL,
+	user_geometry geometry  NOT NULL,
+	PRIMARY KEY (geometory_id)
+) ENGINE = InnoDB DEFAULT CHARACTER SET utf8;
+
+
 CREATE TABLE spajam.t_wallet
 (
+	wallet_id int NOT NULL AUTO_INCREMENT,
 	user_id int NOT NULL,
 	currency_id varchar(10) NOT NULL,
 	number decimal(9) NOT NULL,
-	PRIMARY KEY (user_id, currency_id)
+	PRIMARY KEY (wallet_id)
 ) ENGINE = InnoDB DEFAULT CHARACTER SET utf8;
 
 

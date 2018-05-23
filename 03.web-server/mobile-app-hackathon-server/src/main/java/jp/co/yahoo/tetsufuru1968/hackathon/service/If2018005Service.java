@@ -1,18 +1,28 @@
 package jp.co.yahoo.tetsufuru1968.hackathon.service;
 
-import org.springframework.stereotype.Service;
+import java.util.List;
 
-import jp.co.yahoo.tetsufuru1968.hackathon.dto.UserListDto;
-import jp.co.yahoo.tetsufuru1968.hackathon.dto.UserSearchConditionDto;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import jp.co.yahoo.tetsufuru1968.hackathon.domain.Geometry;
 import lombok.AllArgsConstructor;
 
 @Service
 @AllArgsConstructor
+@Transactional
 public class If2018005Service {
 
-	UserService userService;
+	GeometryService geometryService;
 
-	public UserListDto getExchangetargetUser(UserSearchConditionDto userSearchConditionDto) {
-		return userService.getExchangetargetUser(userSearchConditionDto);
+	public void registerGeometry(Geometry geometry) {
+		List<Geometry> geometryList = geometryService.findByUserId(geometry);
+
+		if (geometryList.size() > 0) {
+			geometry.setGeometory_id(geometryList.get(0).getGeometory_id());
+			//			geometryService.?
+		}
+		geometryService.insertGeometry(geometry);
+
 	}
 }
