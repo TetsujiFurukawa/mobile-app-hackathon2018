@@ -29,6 +29,12 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
 	runtime('mysql:mysql-connector-java')
 	compile('org.twitter4j:twitter4j-core:4.0.4')
+
+	// https://mvnrepository.com/artifact/org.hibernate/hibernate-spatial
+	compile group: 'org.hibernate', name: 'hibernate-spatial', version: '5.2.5.Final'
+	// https://mvnrepository.com/artifact/com.vividsolutions/jts
+	compile group: 'com.vividsolutions', name: 'jts', version: '1.13'
+
 	runtime('org.projectlombok:lombok:1.16.20')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }

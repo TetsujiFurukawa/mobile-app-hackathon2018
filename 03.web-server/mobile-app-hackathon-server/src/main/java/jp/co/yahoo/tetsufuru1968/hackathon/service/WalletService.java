@@ -3,20 +3,24 @@ package jp.co.yahoo.tetsufuru1968.hackathon.service;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import jp.co.yahoo.tetsufuru1968.hackathon.domain.Wallet;
 import jp.co.yahoo.tetsufuru1968.hackathon.dto.CurrencyDto;
 import jp.co.yahoo.tetsufuru1968.hackathon.dto.CurrencyExchangeDto;
 import jp.co.yahoo.tetsufuru1968.hackathon.dto.CurrencyListDto;
 import jp.co.yahoo.tetsufuru1968.hackathon.dto.UserDto;
+import jp.co.yahoo.tetsufuru1968.hackathon.repository.CurrencyDtoRepository;
 import jp.co.yahoo.tetsufuru1968.hackathon.repository.WalletRepository;
 import lombok.AllArgsConstructor;
 
 @Service
 @AllArgsConstructor
+@Transactional
 public class WalletService {
 
 	WalletRepository walletRepository;
+	CurrencyDtoRepository currencyDtoRepository;
 
 	// お小遣いの交換
 	public void currencyExchange(CurrencyExchangeDto currencyExchangeDto) {
@@ -30,7 +34,10 @@ public class WalletService {
 
 		// 送信先に通貨を追加する
 		List<Wallet> targetWallet = walletRepository.findByCurrency(trgetUserId, currencyId);
-		Wallet wallet = new Wallet(trgetUserId, currencyId, number);
+		Wallet wallet = new Wallet();
+		wallet.setUser_id(trgetUserId);
+		wallet.setCurrency_id(currencyId);
+		wallet.setNumber(number);
 		if (targetWallet != null && targetWallet.size() == 0) {
 			// レコードが存在しなかった場合は新規登録する
 			walletRepository.save(wallet);
@@ -45,7 +52,7 @@ public class WalletService {
 	// 所持金取得
 	public CurrencyListDto getCurrencyList(UserDto userDto) {
 		Integer userId = userDto.getUser_id();
-		List<CurrencyDto> CurrencyList = walletRepository.findByUserId(userId);
+		List<CurrencyDto> CurrencyList = currencyDtoRepository.findByUserId(userId);
 
 		CurrencyListDto currencyListDto = new CurrencyListDto();
 		currencyListDto.setCurrencyList(CurrencyList);

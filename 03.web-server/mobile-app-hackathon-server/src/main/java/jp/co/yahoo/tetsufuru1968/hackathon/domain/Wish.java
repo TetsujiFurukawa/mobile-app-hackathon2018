@@ -1,5 +1,7 @@
 package jp.co.yahoo.tetsufuru1968.hackathon.domain;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -10,27 +12,29 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "m_user")
 @Data
+@Table(name = "t_wish")
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class Wish implements Serializable {
 
-	// ユーザID
 	@Id
 	@GeneratedValue
+	private Integer wish_id;
+
+	// ユーザID
 	private Integer user_id;
 
-	// 世帯ID
-	private Integer family_id;
-
-	// ユーザ名
+	// 名前
 	private String name;
 
-	// 区分
-	private Integer division;
+	// 通貨ID
+	private String currency_id;
 
-	// ハッシュ値
-	private String hash_value;
+	// 数量
+	private Integer number;
+
+	// 購入フラグ
+	private Integer buyFlg;
 
 }

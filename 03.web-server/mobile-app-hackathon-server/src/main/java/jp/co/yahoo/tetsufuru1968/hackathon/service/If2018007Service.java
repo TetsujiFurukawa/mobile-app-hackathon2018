@@ -9,7 +9,7 @@ import lombok.AllArgsConstructor;
 
 @Service
 @AllArgsConstructor
-public class If2018006Service {
+public class If2018007Service {
 
 	WalletService walletService;
 
