@@ -16,3 +16,7 @@ function displayButton() {
         $("#bought").hide();
     }
 }
+
+function back() {
+    location.href='main.html';
+}

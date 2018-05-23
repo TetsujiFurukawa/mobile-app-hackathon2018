@@ -24,43 +24,27 @@
         <table class="table" id="achivementList">
             <tr>
                 <td>めいしょー</td>
-                <td>
-                    <select required>
-                        <option value="" hidden>Choose</option>
-                        <option value="1">cat</option>
-                        <option value="2">dog</option>
-                        <option value="3">rabbit</option>
-                        <option value="4">squirrel</option>
-                    </select>
-                </td>
+                <td id="workName"></td>
             </tr>
             <tr>
                 <td>ねだん</td>
-                <td>10ごおるど</td>
+                <td id="nedan"></td>
             </tr>
             <tr>
                 <td>せつめい</td>
-                <td><textarea></textarea></td>
+                <td><textarea id="discription" readonly></textarea></td>
             </tr>
             <tr>
                 <td>しゃしん</td>
                 <td><img src="img/sample.png"></td>
             </tr>
-            <tr>
-                <td>ひょうか</td>
-                <td>
-                    <input type="radio" name="radio02" id="radio02-01">
-                    <label for="radio02-01">ラジオ01</label>
-                    <input type="radio" name="radio02"id="radio02-02">
-                    <label for="radio02-02">ラジオ02</label>
-                    <input type="radio" name="radio02" id="radio02-03">
-                    <label for="radio02-03">ラジオ03</label>
-                </td>
-            </tr>
         </table>
+        <div id="hanamaru" ></div>
 
-        <button class="button">きゃっか</button>
-        <button class="button">しょうにん</button>
+        <button class="button" id="rejection" onclick="update(2)">きゃっか</button>
+        <button class="button" id="apply" onclick="update(1)">しょうにん</button>
+        <button class="button" id="back" onclick="back()">もどる</button>
+        <p id="errorMsg" style="color:red; display:none " >サーバとの通信に失敗しました</p>
 
     </div>  
 
@@ -71,5 +55,6 @@
     </div>    
 
     <script src="js/jquery.js"></script>
+    <script src="js/regist_money_for_adult.js"></script>
 </body>
 </html>

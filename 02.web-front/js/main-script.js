@@ -96,8 +96,8 @@ function callAPi() {
     };
 
     $.ajax({
-        type:"post",                // method = "POST"
-        url:"localhost:8080",        // POST送信先のURL
+        type:"get",                // method = "POST"
+        url:"localhost:8080/api/spajam/if20180002",        // POST送信先のURL
         data:JSON.stringify(requestData),  // JSONデータ本体
         contentType: 'application/json', // リクエストの Content-Type
         dataType: "json",           // レスポンスをJSONとしてパースする
@@ -174,6 +174,13 @@ function displayRow(work) {
     td2.innerHTML = work.work_item_name;
     td3.innerHTML = toNedan(work.currency_id, work.number);
     td4.innerHTML = toSyounin(work.approval);
+
+    tr.onclick = function () {trClick(work.work_id);};
+}
+
+function trClick(workId) {
+    console.log("click workId=" + workId);
+    location.href='regist_money_for_adult.html?workId=' + workId;
 }
 
 function toNedan(currency_id, number) {
@@ -210,4 +217,12 @@ function toSyounin(approval) {
 
 function scrounge() {
     location.href='regist_compensation.html';
+}
+
+function todayWork() {
+    location.href='regist_money_for_child.html';
+}
+
+function exchange() {
+    location.href='money_trade.html';
 }

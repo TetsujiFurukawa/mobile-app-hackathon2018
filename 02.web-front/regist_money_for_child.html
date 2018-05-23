@@ -25,22 +25,17 @@
             <tr>
                 <td>めいしょー</td>
                 <td>
-                    <select required>
-                        <option value="" hidden>Choose</option>
-                        <option value="1">あああ</option>
-                        <option value="2">いいい</option>
-                        <option value="3">ううう</option>
-                        <option value="4">えええ</option>
+                    <select required id="workItemList" onchange="displayNedan()">
                     </select>
                 </td>
             <tr>
             <tr>
                 <td>ねだん</td>
-                <td>10ごおるど</td>
+                <td id="nedan"></td>
             <tr>
             <tr>
                 <td>せつめい</td>
-                <td><textarea></textarea></td>
+                <td><textarea id="discription"></textarea></td>
             <tr>
             <tr>
                 <td>しゃしん</td>
@@ -49,7 +44,8 @@
         </table>
 
         <button class="button">　しゃしん　</button>
-        <button class="button">きょうこれした</button>
+        <button class="button" onclick="done()">きょうこれした</button>
+        <p id="errorMsg" style="color:red; display:none " >サーバとの通信に失敗しました</p>
 
     </div>  
 
@@ -60,5 +56,6 @@
     </div>    
 
     <script src="js/jquery.js"></script>
+    <script src="js/regist_money_for_child.js"></script>
 </body>
 </html>
