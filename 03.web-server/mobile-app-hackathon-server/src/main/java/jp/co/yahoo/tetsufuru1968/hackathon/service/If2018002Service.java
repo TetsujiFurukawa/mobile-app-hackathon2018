@@ -26,6 +26,13 @@ public class If2018002Service {
 
 	}
 
+	// 一覧を取得する
+	public List<WorkDto> getChildWorks(Integer familyId) {
+
+		return workDtoService.getChildWorks(familyId);
+
+	}
+
 	// 所持金取得
 	public CurrencyListDto getCurrencyList(UserDto userDto) {
 
@@ -42,7 +49,7 @@ public class If2018002Service {
 
 	public Boolean isParent(UserDto userDto) {
 		User user = userService.getUser(userDto.getUser_id());
-		if ("1".equals(user.getDivision())) {
+		if (user.getDivision() == 1) {
 			return true;
 		} else {
 			return false;
@@ -50,4 +57,8 @@ public class If2018002Service {
 
 	}
 
+	public User getUser(UserDto userDto) {
+		User user = userService.getUser(userDto.getUser_id());
+		return user;
+	}
 }

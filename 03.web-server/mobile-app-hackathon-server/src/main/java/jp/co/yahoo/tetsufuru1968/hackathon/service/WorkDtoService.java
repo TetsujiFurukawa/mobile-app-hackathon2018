@@ -21,4 +21,11 @@ public class WorkDtoService {
 
 	}
 
+	// 一覧取得
+	public List<WorkDto> getChildWorks(Integer familyId) {
+
+		return workDtoRepository.getChildWorks(familyId);
+
+	}
+
 }
