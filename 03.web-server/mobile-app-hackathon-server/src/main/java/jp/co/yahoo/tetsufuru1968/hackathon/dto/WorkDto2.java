@@ -1,7 +1,6 @@
 package jp.co.yahoo.tetsufuru1968.hackathon.dto;
 
 import javax.persistence.Column;
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -10,11 +9,10 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class WorkDto {
+public class WorkDto2 {
 
 	// 労働実績ID
 	@Id
@@ -48,17 +46,5 @@ public class WorkDto {
 	// 承認フラグ
 	@Column(nullable = true)
 	private Integer approval;
-
-	// 労働アイテム名称
-	private String work_item_name;
-
-	// 通貨ID
-	private String currency_id;
-
-	// 数量
-	private Integer number;
-
-	// 承認文言
-	private String approval_message;
 
 }

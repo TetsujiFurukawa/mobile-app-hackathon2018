@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import jp.co.yahoo.tetsufuru1968.hackathon.domain.Geometry;
+import jp.co.yahoo.tetsufuru1968.hackathon.dto.GeometryDto;
 import lombok.AllArgsConstructor;
 
 @Service
@@ -15,14 +15,14 @@ public class If2018005Service {
 
 	GeometryService geometryService;
 
-	public void registerGeometry(Geometry geometry) {
-		List<Geometry> geometryList = geometryService.findByUserId(geometry);
+	public void registerGeometry(GeometryDto geometryDto) {
+		List<GeometryDto> geometryList = geometryService.findByUserId(geometryDto);
 
 		if (geometryList.size() > 0) {
-			geometry.setGeometory_id(geometryList.get(0).getGeometory_id());
+			geometryDto.setGeometory_id(geometryList.get(0).getGeometory_id());
 			//			geometryService.?
 		}
-		geometryService.insertGeometry(geometry);
+		geometryService.saveGeometry(geometryDto);
 
 	}
 }

@@ -28,6 +28,7 @@ public class If20180002RestController {
 	public WorkListDto getWorks(@RequestBody WorkListSearchConditionDto searchCondition) {
 		List<WorkDto> works = if2018002Service.getWorks(searchCondition.getUser_id());
 
+		// 手持ちの通貨を取得
 		UserDto userDto = new UserDto();
 		userDto.setUser_id(searchCondition.getUser_id());
 		List<CurrencyDto> currencyList = if2018002Service.getCurrencyList(userDto).getCurrencyList();

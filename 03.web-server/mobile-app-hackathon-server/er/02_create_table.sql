@@ -61,7 +61,8 @@ CREATE TABLE spajam.t_geometry
 	geometory_id int NOT NULL AUTO_INCREMENT,
 	user_id int NOT NULL,
 	search_datetime datetime NOT NULL,
-	user_geometry geometry  NOT NULL,
+	latitude double NOT NULL,
+	longitude double NOT NULL,
 	PRIMARY KEY (geometory_id)
 ) ENGINE = InnoDB DEFAULT CHARACTER SET utf8;
 

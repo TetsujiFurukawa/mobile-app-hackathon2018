@@ -12,7 +12,7 @@ import jp.co.yahoo.tetsufuru1968.hackathon.service.If2018007Service;
 import lombok.NoArgsConstructor;
 
 @RestController
-@RequestMapping("api/spajam/if20180006")
+@RequestMapping("api/spajam/if20180007")
 @NoArgsConstructor
 public class If20180007RestController {
 

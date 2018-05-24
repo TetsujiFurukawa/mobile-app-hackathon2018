@@ -1,8 +1,5 @@
-package jp.co.yahoo.tetsufuru1968.hackathon.domain;
+package jp.co.yahoo.tetsufuru1968.hackathon.dto;
 
-import java.util.Date;
-
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,7 +15,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Geometry {
+public class GeometryDto2 {
 
 	// 位置ID
 	@Id
@@ -29,14 +26,12 @@ public class Geometry {
 	private Integer user_id;
 
 	// 検索日時
-	private Date search_datetime;
+	private String search_datetime;
 
-	// 位置
-	@Column(name = "user_geometry", columnDefinition = "POINT")
-	//	@Column(name = "user_geometry", columnDefinition = "geometry(Point,4326)")
-	//	@Column(columnDefinition = "geometry")
-	//	@Column(name = "locationpoint", columnDefinition = "POINT")
-	//	@Type(type = "org.hibernate.spatial.GeometryType")
-	private String user_geometry;
+	// 緯度
+	private Double latitude;
+
+	// 経度
+	private Double longitude;
 
 }
