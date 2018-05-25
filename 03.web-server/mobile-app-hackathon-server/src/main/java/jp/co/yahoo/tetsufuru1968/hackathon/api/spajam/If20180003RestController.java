@@ -1,8 +1,10 @@
 package jp.co.yahoo.tetsufuru1968.hackathon.api.spajam;
 
+import java.io.IOException;
 import java.text.ParseException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +15,7 @@ import jp.co.yahoo.tetsufuru1968.hackathon.domain.Work;
 import jp.co.yahoo.tetsufuru1968.hackathon.dto.WorkDto2;
 import jp.co.yahoo.tetsufuru1968.hackathon.service.If2018003Service;
 import lombok.NoArgsConstructor;
+import twitter4j.TwitterException;
 
 @RestController
 @RequestMapping("api/spajam/if20180003")
@@ -22,8 +25,10 @@ public class If20180003RestController {
 	@Autowired
 	If2018003Service if2018003Service;
 
+	@CrossOrigin
 	@PostMapping
-	public Work registerWork(@RequestBody WorkDto2 workDto2) throws ParseException {
+	public Work registerWork(@RequestBody WorkDto2 workDto2)
+			throws ParseException, IOException, InterruptedException, TwitterException {
 		// 新規登録もしくは更新する
 
 		Work work = new Work();

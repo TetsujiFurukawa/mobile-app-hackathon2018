@@ -2,6 +2,8 @@ package jp.co.yahoo.tetsufuru1968.hackathon.common;
 
 import java.io.IOException;
 
+import jp.co.yahoo.tetsufuru1968.hackathon.service.MultiChainService;
+
 public class CmdUtility {
 	private static final String SEND_ASSET_FROM = "multichain-cli chain1 sendassetfrom @SOURCE_ADDRE @TARGET_ADDRE @ASSET_NAME @SEND_AMOUNT";
 
@@ -19,7 +21,10 @@ public class CmdUtility {
 				.replace("@ASSET_NAME", assetName)
 				.replace("@SEND_AMOUNT", sendAmount.toString());
 
-		commandMultiChainDo(cmd);
+		System.out.println("cmd:" + cmd);
+		if (MultiChainService.MULTICHAIN_ENNABLE) {
+			commandMultiChainDo(cmd);
+		}
 	}
 
 }

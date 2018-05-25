@@ -3,6 +3,7 @@ package jp.co.yahoo.tetsufuru1968.hackathon.api.spajam;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,11 +16,13 @@ import lombok.NoArgsConstructor;
 @RestController
 @RequestMapping("api/spajam/if20180001")
 @NoArgsConstructor
+
 public class If20180001RestController {
 
 	@Autowired
 	If2018001Service if2018001Service;
 
+	@CrossOrigin
 	@GetMapping
 	public WorkItemListDto getWorkItems() {
 		List<WorkItem> workItems = if2018001Service.getWorkItems();

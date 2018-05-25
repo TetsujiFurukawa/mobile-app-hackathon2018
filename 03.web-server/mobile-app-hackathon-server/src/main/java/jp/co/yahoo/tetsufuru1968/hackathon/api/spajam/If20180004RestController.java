@@ -1,6 +1,7 @@
 package jp.co.yahoo.tetsufuru1968.hackathon.api.spajam;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +19,7 @@ public class If20180004RestController {
 	@Autowired
 	WalletService walletService;
 
+	@CrossOrigin
 	@PostMapping
 	public void CurrencyExchange(@RequestBody CurrencyExchangeDto currencyExchangeDto) {
 		walletService.currencyExchange(currencyExchangeDto);

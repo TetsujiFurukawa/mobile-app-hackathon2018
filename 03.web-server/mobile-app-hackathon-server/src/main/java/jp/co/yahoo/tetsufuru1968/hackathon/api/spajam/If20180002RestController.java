@@ -3,6 +3,7 @@ package jp.co.yahoo.tetsufuru1968.hackathon.api.spajam;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,6 +26,7 @@ public class If20180002RestController {
 	@Autowired
 	If2018002Service if2018002Service;
 
+	@CrossOrigin
 	@PostMapping
 	public WorkListDto getWorks(@RequestBody WorkListSearchConditionDto searchCondition) {
 

@@ -1,6 +1,6 @@
-var jsonData;
+﻿var jsonData;
 var userId;
-var isMock = true;
+var isMock = false
 var mockJson = {
         workList : [
             {
@@ -101,6 +101,7 @@ function callAPi() {
         data:JSON.stringify(requestData),  // JSONデータ本体
         contentType: 'application/json', // リクエストの Content-Type
         dataType: "json",           // レスポンスをJSONとしてパースする
+        async:false,
         success: function(responseData) {   // 200 OK時
             jsonData = responseData;
         },

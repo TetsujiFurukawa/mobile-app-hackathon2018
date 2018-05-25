@@ -3,6 +3,7 @@ package jp.co.yahoo.tetsufuru1968.hackathon.api.spajam;
 import java.text.ParseException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,10 +23,11 @@ public class If20180005RestController {
 	@Autowired
 	If2018005Service if2018005ervice;
 
+	@CrossOrigin
 	@PostMapping
 	public void registerGeometry(@RequestBody GeometryDto2 geometryDto2) throws ParseException {
 
-		GeometryDto geometryDto = new  GeometryDto();
+		GeometryDto geometryDto = new GeometryDto();
 
 		geometryDto.setGeometory_id(geometryDto2.getGeometory_id());
 		geometryDto.setUser_id(geometryDto2.getUser_id());
