@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,6 +24,7 @@ public class If20180001RestController {
 	If2018001Service if2018001Service;
 
 	@CrossOrigin
+	@PostMapping
 	@GetMapping
 	public WorkItemListDto getWorkItems() {
 		List<WorkItem> workItems = if2018001Service.getWorkItems();
