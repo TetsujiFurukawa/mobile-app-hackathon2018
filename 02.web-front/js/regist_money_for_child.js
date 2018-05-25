@@ -43,10 +43,11 @@ function getWorkItemList() {
     }
 
     $.ajax({
-        type:"get",                // method = "POST"
-        url:"localhost:8080/api/spajam/if20180001",        // POST送信先のURL
+        type:"post",                // method = "POST"
+        url:"http://localhost:8080/api/spajam/if20180001",        // POST送信先のURL
         contentType: 'application/json', // リクエストの Content-Type
         dataType: "json",           // レスポンスをJSONとしてパースする
+        async: false,
         success: function(responseData) {   // 200 OK時
             jsonData = responseData;
         },
@@ -142,10 +143,11 @@ function done() {
     console.log("requestData=" + JSON.stringify(requestData));
     $.ajax({
         type:"post",                // method = "POST"
-        url:"localhost:8080/api/spajam/if20180003",        // POST送信先のURL
+        url:"http://localhost:8080/api/spajam/if20180003",        // POST送信先のURL
         data:JSON.stringify(requestData),  // JSONデータ本体
         contentType: 'application/json', // リクエストの Content-Type
         dataType: "json",           // レスポンスをJSONとしてパースする
+        async: false,
         success: function() {   // 200 OK時
             location.href='main.html';
         },

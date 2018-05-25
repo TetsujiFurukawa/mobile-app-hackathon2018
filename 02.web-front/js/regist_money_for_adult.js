@@ -93,10 +93,11 @@ function update(approval) {
     console.log("requestData=" + JSON.stringify(requestData));
     $.ajax({
         type:"post",                // method = "POST"
-        url:"localhost:8080/api/spajam/if20180003",        // POST送信先のURL
+        url:"http://localhost:8080/api/spajam/if20180003",        // POST送信先のURL
         data:JSON.stringify(requestData),  // JSONデータ本体
         contentType: 'application/json', // リクエストの Content-Type
         dataType: "json",           // レスポンスをJSONとしてパースする
+        async: false,
         success: function() {   // 200 OK時
             location.href='main.html';
         },

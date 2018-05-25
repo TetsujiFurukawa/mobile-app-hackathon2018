@@ -1,6 +1,6 @@
 var lat;
 var lng;
-var isMock = true;
+var isMock = false;
 var jsonData;
 var currencyList;
 var mockJson = {
@@ -69,10 +69,11 @@ function callPostLocation() {
 
     $.ajax({
         type:"post",                // method = "POST"
-        url:"localhost:8080/api/spajam/if20180005",        // POST送信先のURL
+        url:"http://localhost:8080/api/spajam/if20180005",        // POST送信先のURL
         data:JSON.stringify(requestData),
         contentType: 'application/json', // リクエストの Content-Type
         dataType: "json",           // レスポンスをJSONとしてパースする
+        async: false,
         success: function(responseData) {   // 200 OK時
             console.log("callAPi success");
         },
@@ -129,10 +130,11 @@ function getUserList() {
 
     $.ajax({
         type:"post",                // method = "POST"
-        url:"localhost:8080/api/spajam/if20180006",        // POST送信先のURL
+        url:"http://localhost:8080/api/spajam/if20180006",        // POST送信先のURL
         data:JSON.stringify(requestData),
         contentType: 'application/json', // リクエストの Content-Type
         dataType: "json",           // レスポンスをJSONとしてパースする
+        async: false,
         success: function(responseData) {   // 200 OK時
             jsonData = responseData;
         },
@@ -210,10 +212,11 @@ function exchange() {
 
     $.ajax({
         type:"post",                // method = "POST"
-        url:"localhost:8080/api/spajam/if20180004",        // POST送信先のURL
+        url:"http://localhost:8080/api/spajam/if20180004",        // POST送信先のURL
         data:JSON.stringify(requestData),  // JSONデータ本体
         contentType: 'application/json', // リクエストの Content-Type
         dataType: "json",           // レスポンスをJSONとしてパースする
+        async: false,
         success: function() {   // 200 OK時
             location.href='main.html';
         },
