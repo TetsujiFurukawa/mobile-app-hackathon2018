@@ -1,4 +1,4 @@
-var isMock = true;
+var isMock = false;
 var jsonData;
 var mockJson = {
     workItemList : [
@@ -162,7 +162,7 @@ function getTime() {
     var today = new Date();
     var time = today.getFullYear() + "/" +
             ('0' + (today.getMonth() + 1)).slice(-2) + "/" +
-            ('0' + today.getDate()).slice(-2) + "/ " +
+            ('0' + today.getDate()).slice(-2) + " " +
             ('0' + today.getHours()).slice(-2) + ":" +
             ('0' + today.getMinutes()).slice(-2) + ":" +
             ('0' + today.getSeconds()).slice(-2);
