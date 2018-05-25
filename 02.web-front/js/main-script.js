@@ -61,7 +61,7 @@ var mockJson = {
             }
         ],
         status : "おねだりせいこうまであと　90ごおるど",
-        isParent : false
+        isParent : true
     };
 
 $(function(){
