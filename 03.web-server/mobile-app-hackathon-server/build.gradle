@@ -16,8 +16,9 @@ apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
 group = 'jp.co.yahoo.tetsufuru1968.hackathon'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = 10
+version = '0.0.1-SNAPSHO8'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 repositories {
 	mavenCentral()
@@ -35,6 +36,6 @@ dependencies {
 	// https://mvnrepository.com/artifact/com.vividsolutions/jts
 	compile group: 'com.vividsolutions', name: 'jts', version: '1.13'
 
-	runtime('org.projectlombok:lombok:1.16.20')
+	compile('org.projectlombok:lombok:1.16.20')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
