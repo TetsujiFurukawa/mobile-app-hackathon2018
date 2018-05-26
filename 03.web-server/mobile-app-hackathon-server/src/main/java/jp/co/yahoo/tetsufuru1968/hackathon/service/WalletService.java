@@ -22,6 +22,8 @@ public class WalletService {
 	WalletRepository walletRepository;
 	CurrencyDtoRepository currencyDtoRepository;
 
+	TwitterService twitterService;
+
 	// お小遣いの交換
 	public void currencyExchange(CurrencyExchangeDto currencyExchangeDto) {
 		Integer srcUserId = currencyExchangeDto.getSrc_user_id();
@@ -45,6 +47,9 @@ public class WalletService {
 		} else {
 			// 数量を追加して更新する
 			walletRepository.addNumber(trgetUserId, currencyId, number);
+
+
+//			twitterService.moneyExchange();
 
 		}
 	}

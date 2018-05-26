@@ -56,6 +56,7 @@ public class If20180002RestController {
 		List<CurrencyDto> currencyList = if2018002Service.getCurrencyList(userDto).getCurrencyList();
 
 		// ステータス取得
+
 		String status = if2018002Service.getStatus(userDto);
 
 		// 返却する。

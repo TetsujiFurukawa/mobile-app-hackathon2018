@@ -1,6 +1,5 @@
 package jp.co.yahoo.tetsufuru1968.hackathon.repository;
 
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -19,13 +18,10 @@ public interface UserDtoRepository extends JpaRepository<UserDto, Integer> {
 			"  INNER JOIN spajam.m_user usr " +
 			"    ON usr.user_id = geo.user_id " +
 			"WHERE " +
-			"  geo.search_datetime BETWEEN :searchDatetimeFrom AND :searchDatetimeTo " +
-			"  and geo.latitude BETWEEN :latitudeFrom AND :latitudeTo " +
-			"  and geo.longitude BETWEEN :longitudeFrom AND :longitudeTo " +
-			"  AND geo.user_id <> :userId and usr.division = 2", nativeQuery = true)
+//			"  geo.search_datetime BETWEEN :searchDatetimeFrom AND :searchDatetimeTo " +
+//			"  and geo.latitude BETWEEN :latitudeFrom AND :latitudeTo " +
+//			"  and geo.longitude BETWEEN :longitudeFrom AND :longitudeTo " +
+			"  geo.user_id <> :userId and usr.division = 2", nativeQuery = true)
 
-	List<UserDto> getFriends(@Param("userId") Integer userId,
-			@Param("searchDatetimeFrom") Date searchDatetimeFrom, @Param("searchDatetimeTo") Date searchDatetimeTo,
-			@Param("latitudeFrom") Double latitudeFrom, @Param("latitudeTo") Double latitudeTo,
-			@Param("longitudeFrom") Double longitudeFrom, @Param("longitudeTo") Double longitudeTo);
+	List<UserDto> getFriends(@Param("userId") Integer userId);
 }

@@ -29,11 +29,16 @@ public class UserService {
 		}
 	}
 
+//	public List<UserDto> getFriends(FriendSearchConditionDto friendSearchConditionDto) {
+//		List<UserDto> friends =userDtoRepository.getFriends(friendSearchConditionDto.getUser_id(),
+//				friendSearchConditionDto.getSearch_datetimeFrom(),friendSearchConditionDto.getSearch_datetimeTo(),
+//				friendSearchConditionDto.getLatitudeFrom(),friendSearchConditionDto.getLatitudeTo(),
+//				friendSearchConditionDto.getLongitudeFrom(),friendSearchConditionDto.getLongitudeTo());
+//
+//		return friends;
+//	}
 	public List<UserDto> getFriends(FriendSearchConditionDto friendSearchConditionDto) {
-		List<UserDto> friends =userDtoRepository.getFriends(friendSearchConditionDto.getUser_id(),
-				friendSearchConditionDto.getSearch_datetimeFrom(),friendSearchConditionDto.getSearch_datetimeTo(),
-				friendSearchConditionDto.getLatitudeFrom(),friendSearchConditionDto.getLatitudeTo(),
-				friendSearchConditionDto.getLongitudeFrom(),friendSearchConditionDto.getLongitudeTo());
+		List<UserDto> friends =userDtoRepository.getFriends(friendSearchConditionDto.getUser_id());
 
 		return friends;
 	}
