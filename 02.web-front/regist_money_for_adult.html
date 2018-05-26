@@ -20,33 +20,27 @@
         <div><img src="img/registmoney-title.png"></div>
     </div>
 
-    <div class="content">
-        <table class="table" id="achivementList">
-            <tr>
-                <td>めいしょー</td>
-                <td id="workName"></td>
-            </tr>
-            <tr>
-                <td>ねだん</td>
-                <td id="nedan"></td>
-            </tr>
-            <tr>
-                <td>せつめい</td>
-                <td><textarea id="discription" readonly></textarea></td>
-            </tr>
-            <tr>
-                <td>しゃしん</td>
-                <td><img src="img/sample.png"></td>
-            </tr>
-        </table>
-        <div id="hanamaru" ></div>
-
-        <button class="button" id="rejection" onclick="update(2)">きゃっか</button>
-        <button class="button" id="apply" onclick="update(1)">しょうにん</button>
-        <button class="button" id="back" onclick="back()">もどる</button>
+    <div class="content regist_money-wrap">
+        <h2>なまえ</h2>
+        <p id="workName"></p>
+        <br><br>
+        <h2>ねだん</h2>
+        <p id="nedan"></p>
+        <br>
+        <h2>せつめい</h2>
+        <textarea id="discription" readonly></textarea>
+        <br>
+        <h2>しゃしん</h2>
+        <img src="img/sample.png">
+        <br>
+        <div id="hanamaru"></div>
+        <br>
+        <input type="image" src="img/registmoney-button1.png" id="rejection" class="button" onClick="update(2)">
+        <input type="image" src="img/registmoney-button2.png" id="apply" class="button" onClick="update(1)">
+        <input type="image" src="img/registmoney-button3.png" id="back" class="button" onClick="back()">
+        
         <p id="errorMsg" style="color:red; display:none " >サーバとの通信に失敗しました</p>
-
-    </div>  
+    </div>
 
     <script src="lib/jquery.js"></script>
     <script src="js/regist_money_for_adult.js"></script>
