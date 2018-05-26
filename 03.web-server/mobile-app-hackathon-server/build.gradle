@@ -37,5 +37,8 @@ dependencies {
 	compile group: 'com.vividsolutions', name: 'jts', version: '1.13'
 
 	compile('org.projectlombok:lombok:1.16.20')
+	// https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api
+	compile group: 'javax.xml.bind', name: 'jaxb-api', version: '2.3.0'
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
+

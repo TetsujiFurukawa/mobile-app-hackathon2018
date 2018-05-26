@@ -11,8 +11,7 @@ import jp.co.yahoo.tetsufuru1968.hackathon.dto.UserDto;
 
 public interface UserDtoRepository extends JpaRepository<UserDto, Integer> {
 
-	@Query(value =
-			"SELECT " +
+	@Query(value = "SELECT " +
 			"  geo.user_id " +
 			"  , usr.name as user_name " +
 			"FROM " +
@@ -23,10 +22,10 @@ public interface UserDtoRepository extends JpaRepository<UserDto, Integer> {
 			"  geo.search_datetime BETWEEN :searchDatetimeFrom AND :searchDatetimeTo " +
 			"  and geo.latitude BETWEEN :latitudeFrom AND :latitudeTo " +
 			"  and geo.longitude BETWEEN :longitudeFrom AND :longitudeTo " +
-			"  AND geo.user_id <> :userId", nativeQuery = true)
+			"  AND geo.user_id <> :userId and usr.division = 2", nativeQuery = true)
 
 	List<UserDto> getFriends(@Param("userId") Integer userId,
-			@Param("searchDatetimeFrom") Date searchDatetimeFrom,@Param("searchDatetimeTo") Date searchDatetimeTo,
-			@Param("latitudeFrom") Double latitudeFrom,@Param("latitudeTo") Double latitudeTo,
-			@Param("longitudeFrom") Double longitudeFrom,@Param("longitudeTo") Double longitudeTo);
+			@Param("searchDatetimeFrom") Date searchDatetimeFrom, @Param("searchDatetimeTo") Date searchDatetimeTo,
+			@Param("latitudeFrom") Double latitudeFrom, @Param("latitudeTo") Double latitudeTo,
+			@Param("longitudeFrom") Double longitudeFrom, @Param("longitudeTo") Double longitudeTo);
 }

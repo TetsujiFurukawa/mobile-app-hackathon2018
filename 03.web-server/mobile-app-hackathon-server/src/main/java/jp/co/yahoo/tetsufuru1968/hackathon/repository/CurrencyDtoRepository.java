@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import jp.co.yahoo.tetsufuru1968.hackathon.dto.CurrencyDto;
+import jp.co.yahoo.tetsufuru1968.hackathon.dto.CurrencyDto;
 
 public interface CurrencyDtoRepository extends JpaRepository<CurrencyDto, Integer> {
 

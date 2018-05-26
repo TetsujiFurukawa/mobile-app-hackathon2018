@@ -19,7 +19,11 @@ public class WishService {
 		String param2 = "お金がたまりました！";
 		String param3 = "オーバー";
 
-		return wishRepository.findByUserId(userId).replace("@param1", param1).replace("@param2", param2)
-				.replace("@param3", param3);
+		String result = wishRepository.findByUserId(userId);
+		if (result != null) {
+			result = result.replace("@param1", param1).replace("@param2", param2)
+					.replace("@param3", param3);
+		}
+		return result;
 	}
 }

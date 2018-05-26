@@ -14,10 +14,10 @@ import lombok.NoArgsConstructor;
 public class CurrencyDto {
 
 	// ユーザID
-	@Id
 	private Integer user_id;
 
 	// 通貨ID
+	@Id
 	private String currency_id;
 
 	// 数量
