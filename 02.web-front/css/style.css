@@ -6,13 +6,16 @@ html, body{
     padding: 0;
     width:100%;
     height:100%;
-    background-color: #D9FCF2;
+    background: #fffff0; /* Old browsers */
+    background: -moz-linear-gradient(top, #fffff0 1%, #ffffe0 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #fffff0 1%,#ffffe0 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #fffff0 1%,#ffffe0 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fffff0', endColorstr='#ffffe0',GradientType=0 ); /* IE6-9 */
 }
 
 .header,
 .content,
 .footer {
-    min-width: 400px;
     width: 100%;
 }
 
@@ -21,9 +24,13 @@ html, body{
     position:fixed; 
     left: 0px;
     padding: 10px 0;
-    background-color: #373737;
+    background-color: #ff74c6;
     color: #ffffff;
     text-align: center;
+}
+
+.header img{
+    width: 50%;
 }
 
 
@@ -42,9 +49,25 @@ html, body{
     text-align: center;
 }
 
+/* ログイン画面 */
+.login-wrap img {
+    width: 75%;
+    margin: 0 auto;
+}
+.login-wrap input[type="image"] {
+    width: 50%;
+    margin: 0 auto;
+}
+.login-wrap input[type="email"] {
+    border: 2px solid #000!important;
+}
+.login-wrap input[type="password"] {
+    border: 2px solid #000!important;
+}
+
+
 input {
     border: none;
-    background-color: #ffffff;
     padding: 10px;
     margin: 10px;
 }
