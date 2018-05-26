@@ -1,21 +1,22 @@
 var lat;
 var lng;
-var isMock = false;
+var isMock = true;
 var jsonData;
 var currencyList;
+var isDone = false;
 var mockJson = {
     userList : [
         {
             user_id : 2,
-            user_namre : "けんちゃん"
+            user_name : "けんちゃん"
         },
         {
             user_id : 3,
-            user_namre : "かとちゃん"
+            user_name : "かとちゃん"
         },
         {
             user_id : 4,
-            user_namre : "よしこちゃん"
+            user_name : "よしこちゃん"
         }
     ]
 };
@@ -25,7 +26,38 @@ $(function(){
     $("#exchange").prop("disabled", true);
     getLocation();
     displayCurrencyList();
+    $("#huruhuruButton").hide();
+    $("#selectFriend").hide();
+    setTimeout(() => {
+        alert('3000ms past.');
+        window.addEventListener('devicemotion', function(e) {
+            alert(e.acceleration.x);
+            console.log(e.acceleration);
+
+            if (isDone) {
+                return;
+            }
+        
+            var ac = e.acceleration;
+            if (ac.x >= 3 || ac.y >= 3 ) {
+                $("#message").hide();
+                serchFriend();
+                isDone = true;
+            }
+        });
+    }, 3000);
+    setTimeout(showButton, 30000);
 });
+
+function showButton() {
+    if (isDone) {
+        return;
+    }
+
+    $("#message").hide();
+    $("#huruhuruButton").show();
+    isDone = true;
+}
 
 function windowLoad() {
     console.log("load");
@@ -111,6 +143,7 @@ function getCurrencyList() {
 
 function serchFriend() {
     getUserList();
+    $("#selectFriend").show();
     displayFriend();
     $("#exchange").prop("disabled", false);
 }
@@ -175,7 +208,7 @@ function displayFriend() {
 
     var tbody = document.getElementById("friendList");
 
-    var rows = userList.map(item => `<td><input type="radio" id="${item.user_id}" name="user_id" value="${item.user_id}" data-item="${encodeURIComponent(JSON.stringify(item))}" onchange="curChanged(this);" /><label for="${item.user_id}"></label></td><td>${item.user_namre}</td>`)
+    var rows = userList.map(item => `<td><input type="radio" id="${item.user_id}" name="user_id" value="${item.user_id}" data-item="${encodeURIComponent(JSON.stringify(item))}" onchange="curChanged(this);" /><label for="${item.user_id}"></label></td><td>${item.user_name}</td>`)
       .map(item => `<tr>${item}</tr>`);
     var tbodyHtml = `${rows.join('')}`;
     tbody.innerHTML = (tbodyHtml);
