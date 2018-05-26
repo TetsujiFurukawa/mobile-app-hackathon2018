@@ -11,8 +11,8 @@ public interface WishRepository extends JpaRepository<Wish, Integer> {
 	@Query(value = "SELECT" +
 			"   CASE " +
 			"    WHEN wish.number > wall.number " +
-			"    THEN CONCAT('おねだりせいこうまであと', wish.number - wall.number, cur.name) " +
-			"    ELSE CONCAT('お金がたまりました！', wall.number-wish.number, cur.name,'オーバー') " +
+			"    THEN CONCAT('@param1', wish.number - wall.number, cur.name) " +
+			"    ELSE CONCAT('@param2', wall.number-wish.number, cur.name,'@param3') " +
 			"    END " +
 			"FROM" +
 			"  spajam.t_wish wish " +
