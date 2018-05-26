@@ -20,34 +20,26 @@
         <div><img src="img/registmoney-title.png"></div>
     </div>
 
-    <div class="content">
-        <table class="table" id="achivementList">
-            <tr>
-                <td>めいしょー</td>
-                <td>
-                    <select required id="workItemList" onchange="displayNedan()">
-                    </select>
-                </td>
-            <tr>
-            <tr>
-                <td>ねだん</td>
-                <td id="nedan"></td>
-            <tr>
-            <tr>
-                <td>せつめい</td>
-                <td><textarea id="discription"></textarea></td>
-            <tr>
-            <tr>
-                <td>しゃしん</td>
-                <td><img src="img/sample.png"></td>
-            <tr>
-        </table>
-
-        <button class="button">　しゃしん　</button>
-        <button class="button" onclick="done()">きょうこれした</button>
+    <div class="content regist_money-wrap">
+        <h2>なまえ</h2>
+        <select required id="workItemList" onchange="displayNedan()"></select>
+        <br><br>
+        <h2>ねだん</h2>
+        <p id="nedan"></p>
+        <br>
+        <h2>せつめい</h2>
+        <textarea id="discription"></textarea>
+        <br>
+        <h2>しゃしん</h2>
+        <img src="img/sample.png">
+        <br>
+        <input type="image" src="img/registmoney-camerabutton.png" class="button camera">
+        <br>
+        <input type="image" src="img/registmoney-button.png" class="button" onClick="done()">
+        
         <p id="errorMsg" style="color:red; display:none " >サーバとの通信に失敗しました</p>
-
-    </div>  
+    </div>
+        
 
     <script src="lib/jquery.js"></script>
     <script src="js/regist_money_for_child.js"></script>

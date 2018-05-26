@@ -99,6 +99,43 @@ html, body{
     bottom: 50px;
 }
 
+/* お小遣い登録画面 */
+.regist_money-wrap select{
+    height: 46px;
+    background: #ffffff;
+    border: solid 2px #000;
+    border-radius: 0px;
+}
+.regist_money-wrap textarea{
+    background: #ffffff;
+    border: solid 2px #000;
+    width: 60%;
+    height: 100px;
+}
+.regist_money-wrap img {
+    width: 50%;
+    margin: 0 auto;
+}
+.regist_money-wrap p {
+    width: 100%;
+}
+.regist_money-wrap h2 {
+    width: 100%;
+    color: #f7931e;
+}
+
+.regist_money-wrap input[type="image"] {
+    width: 50%;
+    margin: 0 auto;
+}
+.regist_money-wrap .camera {
+    padding: 0px;
+    position: relative;
+    bottom: 41px;
+    width: 41px!important;
+    left: 69px;
+}
+
 input {
     border: none;
     padding: 10px;
