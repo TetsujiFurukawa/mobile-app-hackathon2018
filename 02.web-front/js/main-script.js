@@ -1,6 +1,7 @@
 ﻿var jsonData;
 var userId;
-var isMock = true;
+var isMock = false;
+var currencyList;
 var mockJson = {
         workList : [
             {
@@ -73,6 +74,7 @@ $(function(){
 
     displayButton();
     displayStatus();
+    displayCurrencyList()
     displayWorkList();
 });
 
@@ -133,6 +135,9 @@ function displayButton() {
     if (isParent) {
         $("#todayWork").hide();
         $("#exchange").hide();
+        $("#spanyan").hide();
+        $("#status").hide();
+        $("#currencyTable").hide();
     }
 }
 
@@ -231,4 +236,21 @@ function exchange() {
 function logout() {
     sessionStorage.clear();
     location.href='index.html';
+}
+
+function displayCurrencyList() {
+    getCurrencyList();
+
+    var tbody = document.getElementById("currencyList");
+
+    var currencyNames = {gold: 'ごーるど', silver: 'しるばー', bronze: 'ぶろんず' };
+    var rows = currencyList.map(item => `<td>${currencyNames[item.currency_id]}</td><td>${item.number}</td>`)
+      .map(item => `<tr>${item}</tr>`);
+    var tbodyHtml = `${rows.join('')}`;
+    tbody.innerHTML = (tbodyHtml);
+}
+
+function getCurrencyList() {
+    currencyList = jsonData.currencyList;
+    console.log(currencyList);
 }

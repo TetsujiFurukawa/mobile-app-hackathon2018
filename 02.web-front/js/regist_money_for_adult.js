@@ -76,15 +76,15 @@ function update(approval) {
     }
 
     var time = getTime();
-    var userId = getUserId();
-    var workItem = document.getElementById("workName").value;
-    var comment = document.getElementById("discription").value;
+    //var userId = getUserId();
+    //var workItem = document.getElementById("workName").value;
+    //var comment = document.getElementById("discription").value;
     var requestData = {
         work_id: workDetail.work_id,
         pay_date : time,
-        user_id : userId,
-        work_item_id : workItem,
-        child_comment : comment,
+        user_id : workDetail.user_id,
+        work_item_id : workDetail.work_item_id,
+        child_comment : workDetail.child_comment,
         attached_image : null,
         parent_comment_id : null,
         approval : approval
@@ -96,7 +96,7 @@ function update(approval) {
         url:"http://localhost:8080/api/spajam/if20180003",        // POST送信先のURL
         data:JSON.stringify(requestData),  // JSONデータ本体
         contentType: 'application/json', // リクエストの Content-Type
-        dataType: "json",           // レスポンスをJSONとしてパースする
+        //dataType: "json",           // レスポンスをJSONとしてパースする
         async: false,
         success: function() {   // 200 OK時
             location.href='main.html';

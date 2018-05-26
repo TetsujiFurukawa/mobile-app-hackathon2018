@@ -25,8 +25,17 @@
         <input type="image" src="img/main-button2.png" class="button" id="scrounge" onClick="scrounge()"><br>
         <input type="image" src="img/main-button3.png" class="button" id="exchange" onClick="exchange()"><br>
 
-        <img src="img/main-onedari.png">
+        <img src="img/main-onedari.png" id="spanyan">
         <p id="status">よみこみちゅう</p>
+
+        <table class="table" id="currencyTable">
+            <thead>
+                <tr>
+                    <th colspan="2">いまもっているお金</th>
+                </tr>
+            </thead>
+            <tbody id="currencyList"></tbody>
+        </table>
 
         <table class="table" id="workList">
             <thead>

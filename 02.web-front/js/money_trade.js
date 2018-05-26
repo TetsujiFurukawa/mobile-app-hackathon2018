@@ -1,6 +1,6 @@
 var lat;
 var lng;
-var isMock = true;
+var isMock = false;
 var jsonData;
 var currencyList;
 var isDone = false;
@@ -29,9 +29,9 @@ $(function(){
     $("#huruhuruButton").hide();
     $("#selectFriend").hide();
     setTimeout(() => {
-        alert('3000ms past.');
+        //alert('3000ms past.');
         window.addEventListener('devicemotion', function(e) {
-            alert(e.acceleration.x);
+            // alert(e.acceleration.x);
             console.log(e.acceleration);
 
             if (isDone) {
@@ -39,7 +39,7 @@ $(function(){
             }
         
             var ac = e.acceleration;
-            if (ac.x >= 3 || ac.y >= 3 ) {
+            if (ac.x >= 1 || ac.y >= 1 || ac.z >= 1 ) {
                 $("#message").hide();
                 serchFriend();
                 isDone = true;
@@ -79,6 +79,7 @@ function successCallback (pos) {
 
 function errorCallback(error) {
     console.log("error:" + error.message);
+    alert("geoError")
     $("#errorMsg").show();
 }
 
@@ -104,12 +105,12 @@ function callPostLocation() {
         url:"http://localhost:8080/api/spajam/if20180005",        // POST送信先のURL
         data:JSON.stringify(requestData),
         contentType: 'application/json', // リクエストの Content-Type
-        dataType: "json",           // レスポンスをJSONとしてパースする
         async: false,
         success: function(responseData) {   // 200 OK時
             console.log("callAPi success");
         },
         error: function() {         // HTTPエラー時
+            alert("postError")
             $("#errorMsg").show();
         },
         complete: function() {      // 成功・失敗に関わらず通信が終了した際の処理
@@ -172,6 +173,7 @@ function getUserList() {
             jsonData = responseData;
         },
         error: function() {         // HTTPエラー時
+            alert("getError")
             $("#errorMsg").show();
         },
         complete: function() {      // 成功・失敗に関わらず通信が終了した際の処理
@@ -255,12 +257,13 @@ function exchange() {
         url:"http://localhost:8080/api/spajam/if20180004",        // POST送信先のURL
         data:JSON.stringify(requestData),  // JSONデータ本体
         contentType: 'application/json', // リクエストの Content-Type
-        dataType: "json",           // レスポンスをJSONとしてパースする
+        //dataType: "json",           // レスポンスをJSONとしてパースする
         async: false,
         success: function() {   // 200 OK時
             location.href='main.html';
         },
         error: function() {         // HTTPエラー時
+            alert("exchangeError")
             $("#errorMsg").show();
         },
     });
