@@ -10,12 +10,15 @@ public class CmdUtility {
 	private static void commandMultiChainDo(String cmd) throws IOException, InterruptedException {
 
 		Runtime runtime = Runtime.getRuntime();
-		runtime.exec("cmd");
+		String[] Command = { "cmd", "/c", cmd};
+		Process  p =runtime.exec(cmd);
+//		int ret = p.waitFor();
+		System.out.print(p.toString());
 	}
 
-	public static void sendAssetFrom(String srcAddress, String targetAddress, String assetName, Integer sendAmount)
+	public static void sendAssetFrom(String home,String srcAddress, String targetAddress, String assetName, Integer sendAmount)
 			throws IOException, InterruptedException {
-		String cmd = SEND_ASSET_FROM.replaceAll(
+		String cmd = home + SEND_ASSET_FROM.replaceAll(
 				"@SOURCE_ADDRE", srcAddress)
 				.replace("@TARGET_ADDRE", targetAddress)
 				.replace("@ASSET_NAME", assetName)

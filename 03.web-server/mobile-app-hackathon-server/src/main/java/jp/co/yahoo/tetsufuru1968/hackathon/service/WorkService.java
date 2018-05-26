@@ -78,7 +78,7 @@ public class WorkService {
 		Optional<User> user = userRepository.findById(work.getUser_id());
 		if (user.orElse(null) != null) {
 			String targetHash = user.get().getHash_value();
-			String assetHash = "";
+			String currencyId = "";
 			Integer sendAmount = 0;
 			String userName = user.get().getName();
 
@@ -106,7 +106,7 @@ public class WorkService {
 			// 通貨を取得する
 			Currency currency = currencyRepository.findBycurrencyId(workItem.get().getCurrency_id());
 			if (currency != null) {
-				assetHash = currency.getHash_value();
+				currencyId = currency.getCurrency_id();
 				currencyName = currency.getName();
 			}
 
@@ -120,7 +120,7 @@ public class WorkService {
 			}
 			walletRepository.save(wallets.get(0));
 
-			multiChainService.getMoney(targetHash, assetHash, sendAmount);
+			multiChainService.getMoney(targetHash, currencyId, sendAmount);
 
 			StringBuffer sb = createTweetMessage(sendAmount, familyName, userName, workItemName, currencyName);
 
