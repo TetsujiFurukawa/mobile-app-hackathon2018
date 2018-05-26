@@ -208,10 +208,17 @@ function displayFriend() {
 
     var tbody = document.getElementById("friendList");
 
-    var rows = userList.map(item => `<td><input type="radio" id="${item.user_id}" name="user_id" value="${item.user_id}" data-item="${encodeURIComponent(JSON.stringify(item))}" onchange="curChanged(this);" /><label for="${item.user_id}"></label></td><td>${item.user_name}</td>`)
-      .map(item => `<tr>${item}</tr>`);
-    var tbodyHtml = `${rows.join('')}`;
-    tbody.innerHTML = (tbodyHtml);
+    var rows = userList.map(item => `
+        <td>
+            <input type="radio" id="${item.user_id}" name="user_id" value="${item.user_id}" data-item="${encodeURIComponent(JSON.stringify(item))}" onchange="curChanged(this);" />
+            <label for="${item.user_id}"></label>
+        </td>
+        <td>
+            ${item.user_name}
+        </td>
+    `).map(item => `<tr>${item}</tr>`);
+    var tbodyHtml = rows.join('');
+    tbody.innerHTML = tbodyHtml;
 }
 
 function userChanged(el)  {

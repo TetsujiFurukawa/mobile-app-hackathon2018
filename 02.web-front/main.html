@@ -17,21 +17,22 @@
 
 <body>
     <div class="header">
-        <div>メイン画面</div>
+        <div><img src="img/main-title.png"></div>
     </div>
 
-    <div class="content">
-        <button class="button" id="todayWork" onClick="todayWork()">きょうなにした</button>
-        <button class="button" id="scrounge" onClick="scrounge()">　おねだり　</button>
-        <button class="button" id="exchange" onClick="exchange()">　こうかん　</button>
+    <div class="content main-wrap">
+        <input type="image" src="img/main-button1.png" class="button" id="todayWork" onClick="todayWork()"><br>
+        <input type="image" src="img/main-button2.png" class="button" id="scrounge" onClick="scrounge()"><br>
+        <input type="image" src="img/main-button3.png" class="button" id="exchange" onClick="exchange()"><br>
 
+        <img src="img/main-onedari.png">
         <p id="status">よみこみちゅう</p>
 
         <table class="table" id="workList">
             <thead>
                 <tr>
                     <th>ひにち</th>
-                    <th>めいしょう</th>
+                    <th>なまえ</th>
                     <th>ねだん</th>
                     <th>しょうにん</th>
                 </tr>
@@ -39,16 +40,10 @@
             <tbody></tbody>
         </table>
 
-        <button class="button" id="logout" onClick="logout()">　ログアウト　</button>
+        <input type="image" src="img/main-button4.png" class="button" id="logout" onClick="logout()"><br>
     </div>  
 
-    
-
-    <div class="footer">
-        <div>© 2018 Wind.</div>
-    </div>    
-
-    <script src="js/jquery.js"></script>
+    <script src="lib/jquery.js"></script>
     <script src="js/main-script.js"></script>
 </body>
 </html>

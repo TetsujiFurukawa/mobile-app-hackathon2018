@@ -17,20 +17,19 @@
 
 <body>
     <div class="header">
-        <div>ログイン画面</div>
+        <div><img src="img/login-title.png"></div>
     </div>    
 
-    <div class="content">
+    <div class="content login-wrap">
+        <br>
         <input id="userId" type="email" placeholder="ログインID"><br>
         <input type="password" placeholder="パスワード"><br>
-        <button class="button" onClick="login()">ログイン</button>
-    </div>    
+        <input type="image" src="img/login-button.png" class="button" onClick="login()">
+        <br><br>
+        <img src="img/login-img.png">
+    </div>
 
-    <div class="footer">
-        <div>© 2018 Wind.</div>
-    </div>    
-
-    <script src="js/jquery.js"></script>
+    <script src="lib/jquery.js"></script>
     <script src="js/login-script.js"></script>
 </body>
 </html>

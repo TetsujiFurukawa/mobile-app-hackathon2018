@@ -6,13 +6,16 @@ html, body{
     padding: 0;
     width:100%;
     height:100%;
-    background-color: #D9FCF2;
+    background: #fffff0; /* Old browsers */
+    background: -moz-linear-gradient(top, #fffff0 1%, #ffffe0 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #fffff0 1%,#ffffe0 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #fffff0 1%,#ffffe0 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fffff0', endColorstr='#ffffe0',GradientType=0 ); /* IE6-9 */
 }
 
 .header,
 .content,
 .footer {
-    min-width: 400px;
     width: 100%;
 }
 
@@ -21,9 +24,14 @@ html, body{
     position:fixed; 
     left: 0px;
     padding: 10px 0;
-    background-color: #373737;
+    background-color: #ff74c6;
     color: #ffffff;
     text-align: center;
+    z-index: 9999;
+}
+
+.header img{
+    width: 50%;
 }
 
 
@@ -42,9 +50,57 @@ html, body{
     text-align: center;
 }
 
+/* ログイン画面 */
+.login-wrap img {
+    width: 75%;
+    margin: 0 auto;
+}
+.login-wrap input[type="image"] {
+    width: 50%;
+    margin: 0 auto;
+}
+.login-wrap input[type="email"] {
+    border: 2px solid #000!important;
+}
+.login-wrap input[type="password"] {
+    border: 2px solid #000!important;
+}
+
+/* メイン画面 */
+.main-wrap img {
+    width: 75%;
+    margin: 0 auto;
+}
+.main-wrap input[type="image"] {
+    width: 50%;
+    margin: 0 auto;
+}
+.main-wrap input[type="email"] {
+    border: 2px solid #000!important;
+}
+.main-wrap input[type="password"] {
+    border: 2px solid #000!important;
+}
+.main-wrap #status {
+    position: relative;
+    bottom: 302px;
+    font-size: 20px;
+    width: 200px;
+    text-align: center;
+    margin: 0 auto;
+    font-weight: bold;
+    color: #0768a2;
+}
+.main-wrap table th {
+    word-break: keep-all;
+}
+.main-wrap table {
+    position: relative;
+    bottom: 50px;
+}
+
 input {
     border: none;
-    background-color: #ffffff;
     padding: 10px;
     margin: 10px;
 }
@@ -70,39 +126,21 @@ button:active {
 
 table{
     border-collapse: separate;
-    border-spacing: 5px;
     margin: 0 auto;
 }
 
 td,th{
     padding: 10px;
     text-align: center;
+    border-bottom: dotted 1px #666;
 }
-
-th:first-of-type,
-td:first-of-type{
+th {
     background: #b2ffd8;
 }
-
-th:nth-of-type(1),
-td:nth-of-type(1){
+td {
     background: #d1ffd1;
 }
 
-th:nth-of-type(2),
-td:nth-of-type(2){
-    background: #e8ffd1;
-}
-
-th:nth-of-type(3),
-td:nth-of-type(3){
-    background: #ffffd1;
-}
-
-th:nth-of-type(4),
-td:nth-of-type(4){
-    background: #ffe8d1;
-}
 
 select {
 	padding-right: 1em;
