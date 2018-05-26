@@ -61,7 +61,7 @@ var mockJson = {
             }
         ],
         status : "おねだりせいこうまであと　90ごおるど",
-        isParent : true
+        isParent : false
     };
 
 $(function(){
@@ -226,4 +226,9 @@ function todayWork() {
 
 function exchange() {
     location.href='money_trade.html';
+}
+
+function logout() {
+    sessionStorage.clear();
+    location.href='index.html';
 }
