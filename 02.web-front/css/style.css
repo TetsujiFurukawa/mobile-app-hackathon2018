@@ -148,6 +148,15 @@ html, body{
     width: 50%;
     margin: 0 auto;
 }
+/* おこづかい交換画面 */
+.moneytrade input[type="image"] {
+    width: 50%;
+    margin: 0 auto;
+}
+.moneytrade #message img {
+    width: 75%;
+    margin: 0 auto;
+}
 
 input {
     border: none;
