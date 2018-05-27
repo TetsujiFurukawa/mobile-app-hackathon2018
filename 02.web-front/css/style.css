@@ -141,6 +141,7 @@ html, body{
     bottom: 235px;
     z-index: 9999;
     right: 3px;
+    margin-bottom: -180px;
 }
 
 .regist_money-wrap input[type="image"] {
