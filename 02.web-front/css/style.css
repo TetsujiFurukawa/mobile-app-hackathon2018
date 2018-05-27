@@ -143,6 +143,11 @@ html, body{
     width: 41px!important;
     left: 69px;
 }
+/* おねだり登録画面 */
+.registcompensation input[type="image"] {
+    width: 50%;
+    margin: 0 auto;
+}
 
 input {
     border: none;
