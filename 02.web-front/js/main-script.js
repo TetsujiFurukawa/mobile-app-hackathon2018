@@ -138,6 +138,7 @@ function displayButton() {
         $("#spanyan").hide();
         $("#status").hide();
         $("#currencyTable").hide();
+        $(".main-wrap").addClass("isParent");
     }
 }
 
