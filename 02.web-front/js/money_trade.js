@@ -102,7 +102,7 @@ function callPostLocation() {
 
     $.ajax({
         type:"post",                // method = "POST"
-        url:"http://localhost:8080/api/spajam/if20180005",        // POST送信先のURL
+        url:"http://40.74.73.197:8080/api/spajam/if20180005",        // POST送信先のURL
         data:JSON.stringify(requestData),
         contentType: 'application/json', // リクエストの Content-Type
         async: false,
@@ -164,7 +164,7 @@ function getUserList() {
 
     $.ajax({
         type:"post",                // method = "POST"
-        url:"http://localhost:8080/api/spajam/if20180006",        // POST送信先のURL
+        url:"http://40.74.73.197:8080/api/spajam/if20180006",        // POST送信先のURL
         data:JSON.stringify(requestData),
         contentType: 'application/json', // リクエストの Content-Type
         dataType: "json",           // レスポンスをJSONとしてパースする
@@ -254,7 +254,7 @@ function exchange() {
 
     $.ajax({
         type:"post",                // method = "POST"
-        url:"http://localhost:8080/api/spajam/if20180004",        // POST送信先のURL
+        url:"http://40.74.73.197:8080/api/spajam/if20180004",        // POST送信先のURL
         data:JSON.stringify(requestData),  // JSONデータ本体
         contentType: 'application/json', // リクエストの Content-Type
         //dataType: "json",           // レスポンスをJSONとしてパースする
