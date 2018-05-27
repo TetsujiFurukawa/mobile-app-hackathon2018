@@ -143,7 +143,7 @@ function done() {
     console.log("requestData=" + JSON.stringify(requestData));
     $.ajax({
         type:"post",                // method = "POST"
-        url:"http://localhost:8080/api/spajam/if20180003",        // POST送信先のURL
+        url:"http://40.74.73.197:8080/api/spajam/if20180003",        // POST送信先のURL
         data:JSON.stringify(requestData),  // JSONデータ本体
         contentType: 'application/json', // リクエストの Content-Type
         dataType: "json",           // レスポンスをJSONとしてパースする
