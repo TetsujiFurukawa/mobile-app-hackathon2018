@@ -48,6 +48,7 @@ html, body{
     max-width: 980px;
     padding: 48px 0;
     text-align: center;
+    margin-top: 50px;
 }
 
 /* ログイン画面 */
@@ -105,6 +106,10 @@ html, body{
 .main-wrap.isParent table{ /* 親の時のみ */
     bottom: 0px!important;
     margin-bottom: 30px!important;
+}
+.main-wrap #currencyTable {
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 /* お小遣い登録画面 */
@@ -184,20 +189,24 @@ button:active {
 }
 
 table{
-    border-collapse: separate;
     margin: 0 auto;
+    border-collapse: collapse;
 }
 
 td,th{
-    padding: 10px;
+    padding: 7px;
     text-align: center;
-    border-bottom: dotted 1px #666;
+    border: solid 1px #2a92c9;
+    border-bottom: dotted 1px #aaaaaa;
+    border-spacing: 0px!important;
+    line-height: 20px;
 }
 th {
-    background: #b2ffd8;
+    background: #2a92c9;
+    color: #ffffff
 }
 td {
-    background: #d1ffd1;
+    background: #ffffff;
 }
 
 
