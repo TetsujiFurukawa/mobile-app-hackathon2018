@@ -170,6 +170,9 @@ html, body{
     width: 75%;
     margin: 0 auto;
 }
+.moneytrade #currencyAmount {
+    margin-top: 15px;
+}
 
 input {
     border: none;
