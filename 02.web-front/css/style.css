@@ -98,6 +98,14 @@ html, body{
     position: relative;
     bottom: 50px;
 }
+.main-wrap table {
+    position: relative;
+    bottom: 50px;
+}
+.main-wrap.isParent table{ /* 親の時のみ */
+    bottom: 0px!important;
+    margin-bottom: 30px!important;
+}
 
 /* お小遣い登録画面 */
 .regist_money-wrap select{
