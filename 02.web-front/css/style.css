@@ -96,6 +96,7 @@ html, body{
     word-break: keep-all;
 }
 .main-wrap table {
+    margin-top: 100px;
     position: relative;
     bottom: 50px;
 }
