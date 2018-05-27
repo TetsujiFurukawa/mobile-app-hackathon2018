@@ -136,6 +136,12 @@ html, body{
     width: 100%;
     color: #f7931e;
 }
+.regist_money-wrap #hanamaru img{
+    position: relative;
+    bottom: 235px;
+    z-index: 9999;
+    right: 3px;
+}
 
 .regist_money-wrap input[type="image"] {
     width: 50%;

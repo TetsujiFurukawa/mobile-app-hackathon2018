@@ -39,7 +39,7 @@ function displayWorkDetail() {
 
 function displayHanamaru() {
     if (workDetail.approval == 1) {
-        document.getElementById("hanamaru").innerHTML = "<img src ='img/hanamaru.jpg'>";
+        document.getElementById("hanamaru").innerHTML = "<img src ='img/hanamaru.png'>";
     }
 }
 
